@@ -31,7 +31,7 @@ public class TaskList {
     // owns the relationship. The cascade types ensure that when a TaskList is persisted,
     // its associated tasks are also saved, and when a TaskList is removed, its associated tasks
     // are deleted automatically.
-    @OneToMany(mappedBy = "taskList", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    @OneToMany(mappedBy = "taskList", cascade = {CascadeType.REMOVE})
     private List<Task> tasks;
 
     public TaskList(UUID id, String title, String description, LocalDateTime created, LocalDateTime updated, List<Task> tasks) {
